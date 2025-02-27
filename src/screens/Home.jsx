@@ -3,14 +3,33 @@ import React, { useState } from "react";
 import { View, FlatList, StyleSheet } from "react-native";
 import { MockData } from "../components/Mockdata";
 import ProductCard from "../components/ProductCard";
+import SearchBar from "../components/SearchBar";
+
 
 const Home = () => {
-  const [products] = useState(MockData);
+  
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filterType, setFilterType] = useState("all");
+
+  // Function to filter products based on searchQuery and filterType
+  const filteredProducts = MockData.filter((item) => {
+    const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesFilter =
+      filterType === "all" ||
+      (filterType === "Veg" && item.isVeg) ||
+      (filterType === "Non-Veg" && !item.isVeg);
+
+    return matchesSearch && matchesFilter;
+  });
+  
+  
 
   return (
     <View style={styles.container}>
+
+<SearchBar onSearch={setSearchQuery} onFilterChange={setFilterType} />
       <FlatList
-        data={products}
+        data={filteredProducts}
         keyExtractor={(item) => item.id.toString()}
         numColumns={2}
         columnWrapperStyle={styles.columnWrapper}

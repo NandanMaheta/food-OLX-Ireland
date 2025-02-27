@@ -6,7 +6,7 @@ import {
   ImageBackground,
   Animated,
 } from "react-native";
-import styles from "../theme/style";
+import styles from "../theme/style"
 import { Button } from "react-native-paper";
 
 const Login = ({onLoginSuccess }) => {

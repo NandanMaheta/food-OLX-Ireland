@@ -1,8 +1,11 @@
 // ProductCard.js
 import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const ProductCard = ({ product }) => {
+
+  const navigation = useNavigation();
   return (
     <View style={styles.cardContainer}>
       {/* Product Image */}
@@ -39,7 +42,7 @@ const ProductCard = ({ product }) => {
       {/* Action Button */}
       <TouchableOpacity 
         style={styles.actionButton}
-        onPress={() => console.log('View details pressed')}>
+        onPress={() => navigation.navigate('ProductDetails', { product })}>
         <Text style={styles.buttonText}>View Details & Order</Text>
       </TouchableOpacity>
     </View>
