@@ -10,6 +10,7 @@ const ProductCard = ({ product }) => {
 
       {/* Product Details Container */}
       <View style={styles.detailsContainer}>
+
         {/* Product Name */}
         <Text style={styles.productName}>{product.name}</Text>
 
@@ -47,15 +48,16 @@ const ProductCard = ({ product }) => {
 
 const styles = StyleSheet.create({
   cardContainer: {
-    flex: 1,
+    flex: 1, //takes up available space
     backgroundColor: '#ffffff',
     borderRadius: 12,
-    margin: 4,
-    elevation: 5,
+    margin: 4,//margin around cards
+    elevation: 6, //shadow
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
+    shadowOffset: { width: 1, height: 2 },
+    shadowOpacity: 0.4,
     shadowRadius: 4,
+    boxSizing:"border-box"
     
   },
   productImage: {
@@ -80,7 +82,7 @@ const styles = StyleSheet.create({
   },
   locationText: {
     fontSize: 12,
-    color: '#95a5a6',
+    color: '#95a5a6',//light gray
     marginBottom: 8,
   },
   ratingContainer: {
@@ -91,26 +93,27 @@ const styles = StyleSheet.create({
   },
   ratingText: {
     fontSize: 14,
-    color: '#f39c12',
+    color: '#f39c12',//orange
   },
   dietaryText: {
     fontSize: 12,
     fontWeight: '700',
-    textTransform: 'uppercase',
+    textTransform: 'uppercase',//uppercase font
   },
   cookedDate: {
     fontSize: 12,
     color: '#bdc3c7',
     fontStyle: 'italic',
-    marginBottom: 8,
+    marginBottom: 12,
+    marginTop:6,
   },
   priceText: {
     fontSize: 18,
     fontWeight: '700',
-    color: '#2ecc71',
+    color: '#2ecc71', //green
   },
   actionButton: {
-    backgroundColor: '#3498db',
+    backgroundColor: '#3498db', //blue background
     paddingVertical: 12,
     borderBottomLeftRadius: 12,
     borderBottomRightRadius: 12,

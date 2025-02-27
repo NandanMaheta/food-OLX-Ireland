@@ -27,7 +27,7 @@ export const MockData = [
     },
     {
       id: 3,
-      name: 'Crab Gaon Style',
+      name: 'Crab Goa Style',
       image: require("../../assets/FoodItems/Crab-Masala Goan Style.png"),
       owner: 'Fernandes Agillio',
       rating: 4.6,

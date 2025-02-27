@@ -3,6 +3,8 @@ import {
     Text,
   } from "react-native";
 import { SafeAreaView } from "react-native";
+
+//simple footer component, easy to  understand
 const Footer = () => {
   return (
     <SafeAreaView >
