@@ -9,7 +9,7 @@ import {
 import styles from "../theme/style";
 import { Button } from "react-native-paper";
 
-const Login = () => {
+const Login = ({onLoginSuccess }) => {
   const [showAnimation, setAnimation] = useState(false); // Controls when to show login content
   const [load, setLoad] = useState(false);
 
@@ -75,9 +75,13 @@ const Login = () => {
             <Button
               mode="contained"
               loading={load}
-              onPress={() => setLoad(true)}
+             onPress={() => {
+              setLoad(true);
+              setTimeout(() => onLoginSuccess(),1500)
+             }}
               width="65%"
               style={{padding:"3px",backgroundColor:"rgba(66, 77, 200, 0.95)"}}
+              
             >
               Login/Sign Up with Google
             </Button>
