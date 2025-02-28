@@ -8,6 +8,22 @@ import {
 } from "react-native";
 import styles from "../theme/style"
 import { Button } from "react-native-paper";
+import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+
+// Firebase configuration (replace with your actual values)
+const firebaseConfig = {
+  apiKey: "AIzaSyAERovAfPnqTdXEoGsSxCmQYtS-PNUKjZM",
+  authDomain: "olxfoodireland.firebaseapp.com",
+  projectId: "olxfoodireland",
+  storageBucket: "olxfoodireland.firebasestorage.app",
+  messagingSenderId: "1071483128578",
+  appId: "1:1071483128578:ios:3e266072484125f58fd01b",
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
 const Login = ({onLoginSuccess }) => {
   const [showAnimation, setAnimation] = useState(false); // Controls when to show login content
@@ -93,3 +109,4 @@ const Login = ({onLoginSuccess }) => {
 };
 
 export default Login;
+

@@ -13,13 +13,24 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
-    },
+      "supportsTablet": true,
+      "bundleIdentifier": "com.Nandan.OLX", 
+      "googleServicesFile": "./GoogleService-Info.plist" 
+    },"plugins": [
+      [
+        "expo-google-sign-in",
+        {
+          "iosClientId": "1071483128578-vscd4f4kukfhaqecu7u3h4fpp2g6koe6.apps.googleusercontent.com" 
+          
+        }
+      ]
+    ],
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.nandy99.OLX_Food"
     },
     "web": {
       "favicon": "./assets/favicon.png"
