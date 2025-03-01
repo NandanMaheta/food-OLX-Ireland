@@ -3,6 +3,7 @@
     "name": "OLX_Food",
     "slug": "OLX_Food",
     "version": "1.0.0",
+    "scheme": "com.Nandan.OLX",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -16,15 +17,7 @@
       "supportsTablet": true,
       "bundleIdentifier": "com.Nandan.OLX", 
       "googleServicesFile": "./GoogleService-Info.plist" 
-    },"plugins": [
-      [
-        "expo-google-sign-in",
-        {
-          "iosClientId": "1071483128578-vscd4f4kukfhaqecu7u3h4fpp2g6koe6.apps.googleusercontent.com" 
-          
-        }
-      ]
-    ],
+    },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",

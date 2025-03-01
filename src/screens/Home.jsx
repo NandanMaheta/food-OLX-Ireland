@@ -22,7 +22,6 @@ const Home = () => {
     return matchesSearch && matchesFilter;
   });
   
-  
 
   return (
     <View style={styles.container}>
