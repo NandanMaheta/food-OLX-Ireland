@@ -10,7 +10,7 @@ const ProductDetails = ({route}) => {
     product && <SafeAreaView style={styles.container}>
       <ScrollView>
         {/* Product Image */}
-        <Image source={product.image} style={styles.productImage} />
+        <Image source={require("../../assets/FoodItems/Ghughra.png")} style={styles.productImage} />
 
         {/* Product Details Container */}
         <View style={styles.detailsContainer}>

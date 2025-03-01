@@ -1,18 +1,31 @@
 // Home.js
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { View, FlatList, StyleSheet } from "react-native";
-import { MockData } from "../components/Mockdata";
 import ProductCard from "../components/ProductCard";
 import SearchBar from "../components/SearchBar";
-
+import { collection, query, onSnapshot } from "firebase/firestore";
+import {db} from "../../fireDatabaseConfig"
 
 const Home = () => {
-  
+  const [products,setProducts] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [filterType, setFilterType] = useState("all");
 
+  useEffect(() => {
+    const q = query(collection(db, "products"));
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+      const productsData = [];
+      querySnapshot.forEach((doc) => {
+        productsData.push({ id: doc.id, ...doc.data() });
+      });
+      setProducts(productsData);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
   // Function to filter products based on searchQuery and filterType
-  const filteredProducts = MockData.filter((item) => {
+  const filteredProducts = products.filter((item) => {
     const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesFilter =
       filterType === "all" ||
@@ -29,7 +42,7 @@ const Home = () => {
 <SearchBar onSearch={setSearchQuery} onFilterChange={setFilterType} />
       <FlatList
         data={filteredProducts}
-        keyExtractor={(item) => item.id.toString()}
+        keyExtractor={(item) => item.id}
         numColumns={2}
         columnWrapperStyle={styles.columnWrapper}
         renderItem={({ item }) => (

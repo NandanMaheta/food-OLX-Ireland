@@ -9,7 +9,7 @@ const ProductCard = ({ product }) => {
   return (
     <View style={styles.cardContainer}>
       {/* Product Image */}
-      <Image source={product.image} style={styles.productImage} />
+      <Image source={require("../../assets/FoodItems/Ghughra.png")} style={styles.productImage} />
 
       {/* Product Details Container */}
       <View style={styles.detailsContainer}>
